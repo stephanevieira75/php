@@ -6,7 +6,7 @@ $tableau =
     [
         'name' => 'Balou',
         'mention' => [ 
-            'excellent' => 0, 
+            'excellent' => 100, 
             'tres bien' => 0, 
             'bien' => 0, 
             'assez bien' => 0, 
