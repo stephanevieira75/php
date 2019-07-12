@@ -7,15 +7,16 @@ $value = null;
 
 /* Début de condition :
 Si la variable globale n'a pas d'entrée: */
-if (isset($_GET['chiffre']))
+if (isset($_POST['chiffre']))
 {
+    $value = (int)$_POST['chiffre'];
     // Si le chiffre est trop grand :
-    if ($_GET['chiffre'] > $aDeviner)
+    if ($value > $aDeviner)
     {
         $erreur = "Votre chiffre est trop grand !";
     }
     // Si le chiffre est trop petit :
-    else if ($_GET['chiffre'] < $aDeviner){
+    else if ($value < $aDeviner){
         $erreur = "Votre chiffre est trop petit !";
     }
     // Si le chiffre est le bon
@@ -23,12 +24,21 @@ if (isset($_GET['chiffre']))
     {
         $succes = "Bravo vous avez deviné le chiffre : $aDeviner";
     }
-    $value = (int)$_GET['chiffre'];
 
 }
 //On appelle le fichier header.php
 require 'header.php';
 ?>
+
+<pre>
+    <h1>$_GET</h1>
+    <?php var_dump($_GET); ?>
+</pre>
+
+<pre>
+    <h1>$_POST</h1>
+    <?php var_dump($_POST); ?>
+</pre>
 
 <?php if ($erreur): ?>
     <div class="alert alert-danger">
@@ -41,7 +51,7 @@ require 'header.php';
 <?php endif ?>
 
 <!-- Formulaire du jeu -->
-<form action="/jeu.php" method="GET">
+<form action="/jeu.php" method="POST">
     <div class="form-group">
         <!-- Input -->
         <input type="number" class="form-control" name="chiffre" placeholder="Entre 0 et 1000" value="<?= $value ?>">
