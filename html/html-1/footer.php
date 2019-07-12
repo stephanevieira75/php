@@ -8,7 +8,8 @@
     <ul class="list-unstyled text-small">
         <?php 
         $linkClass = '';
-        require 'menu.php';?>
+        require 'menu.php';
+        ?>
     </ul>
 </div>
 
