@@ -1,12 +1,12 @@
 <?php
-//  Tableau 
+//  Tableau des candidats
 $tableau = 
 [
     // Balou
     [
         'name' => 'Balou',
         'mention' => [ 
-            'excellent' => 100, 
+            'excellent' => 0, 
             'tres bien' => 0, 
             'bien' => 0, 
             'assez bien' => 0, 
